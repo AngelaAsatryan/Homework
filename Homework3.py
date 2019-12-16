@@ -34,3 +34,17 @@ count_each_mark(punc_mark="!")
 count_each_mark(punc_mark="-")
 #count of "."
 count_each_mark(punc_mark=".")
+
+###other way to calculate the sum of the punctuations marks used in the texte file
+def sum_punc_marks(punc_mark_a, punc_mark_b, punc_mark_c, punc_mark_d, punc_mark_e, punc_mark_f, punc_park_g):
+    a=my_file.count(punc_mark_a)
+    b=my_file.count(punc_mark_b)
+    c=my_file.count(punc_mark_c)
+    d=my_file.count(punc_mark_d)
+    e=my_file.count(punc_mark_e)
+    f=my_file.count(punc_mark_f)
+    g=my_file.count(punc_park_g)
+    total_punc_marks=int(a)+int(b)+int(c)+int(d)+int(e)+int(f)+int(g)
+    print("There are"+ " " + str(total_punc_marks) + " " + "punctuation marks used in the text.")
+
+sum_punc_marks(punc_mark_a='.', punc_mark_b= ',', punc_mark_c=':', punc_mark_d=';', punc_mark_e='!', punc_mark_f='?', punc_park_g='-')
