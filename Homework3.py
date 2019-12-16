@@ -4,15 +4,19 @@
 myfile=open(r"Homework3.txt", "r")
 my_file=myfile.read()
 
-#find if there any $ symbol in the text
-print(my_file.find('$'))
-
-#if no $ symbol found, go to the next step
-#replace all punctuation marks in the file with $ symbol
-input=",.?;-:!"
-output="$$$$$$$"
-transtable=my_file.maketrans(input, output)
-my_file_no_punc=my_file.translate(transtable)
+#find if there any $ symbol in the text, if yes, replace and go to the next step
+find_symbol = my_file.find('$')
+input = ",.?;-:!"
+output = "$$$$$$$"
+transtable = my_file.maketrans(input, output)
+input1 = "$"
+output1 = "#"
+transtable1 = my_file.maketrans(input1, output1)
+replace_symbol = my_file.translate(transtable1)
+if find_symbol == -1:
+        my_file_no_punc=my_file.translate(transtable)
+else:
+        my_file_no_punc = replace_symbol.translate(transtable)
 
 #count the $ in the string and give a message about it
 punc_mark_count=(my_file_no_punc.count('$'))
