@@ -26,21 +26,17 @@ print(text_to_print)
 #define a function to count each punctuation mark seperately
 def count_each_mark(punc_mark):
         print("The number of"+ " " +str(punc_mark) + " " +"mark in the file is" + " " +str(my_file.count(punc_mark))+".")
-punc_marks=("," "." "?" ";" "-" ":" "!")
 
-for i in range(0, len(punc_marks)):
-    count_each_mark(str(punc_marks[i]))
+punc_markss=("," "." "?" ";" "-" ":" "!")
+#print each mark
+for i in range(0, len(punc_markss)):
+    count_each_mark(str(punc_markss[i]))
+
+
 
 ###other way to calculate the sum of the punctuations marks used in the texte file
-def sum_punc_marks(punc_mark_a, punc_mark_b, punc_mark_c, punc_mark_d, punc_mark_e, punc_mark_f, punc_park_g):
-    a=my_file.count(punc_mark_a)
-    b=my_file.count(punc_mark_b)
-    c=my_file.count(punc_mark_c)
-    d=my_file.count(punc_mark_d)
-    e=my_file.count(punc_mark_e)
-    f=my_file.count(punc_mark_f)
-    g=my_file.count(punc_park_g)
-    total_punc_marks=int(a)+int(b)+int(c)+int(d)+int(e)+int(f)+int(g)
-    print("There are"+ " " + str(total_punc_marks) + " " + "punctuation marks used in the text.")
-
-sum_punc_marks(punc_mark_a='.', punc_mark_b= ',', punc_mark_c=':', punc_mark_d=';', punc_mark_e='!', punc_mark_f='?', punc_park_g='-')
+# print(sum(my_file.count(str(punc_marks[0]));my_file.count(str(punc_marks[6]))))
+def sum_punc_marks(punc_mark):
+        total_punc_marks=my_file.count(str(punc_mark[0]))+my_file.count(str(punc_mark[1]))+my_file.count(str(punc_mark[2]))+my_file.count(str(punc_mark[3]))+my_file.count(str(punc_mark[4]))+my_file.count(str(punc_mark[5]))+my_file.count(str(punc_mark[6]))
+        print("There are" + " " + str(total_punc_marks) + " " + "punctuation marks used in the text.")
+sum_punc_marks(str(punc_marks))
