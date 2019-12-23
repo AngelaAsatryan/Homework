@@ -26,18 +26,10 @@ print(text_to_print)
 #define a function to count each punctuation mark seperately
 def count_each_mark(punc_mark):
         print("The number of"+ " " +str(punc_mark) + " " +"mark in the file is" + " " +str(my_file.count(punc_mark))+".")
-#count of ","
-count_each_mark(punc_mark=",")
-#count of ";"
-count_each_mark(punc_mark=";")
-#count of ":"
-count_each_mark(punc_mark=":")
-#count of "!"
-count_each_mark(punc_mark="!")
-#count of "-"
-count_each_mark(punc_mark="-")
-#count of "."
-count_each_mark(punc_mark=".")
+punc_marks=("," "." "?" ";" "-" ":" "!")
+
+for i in range(0, len(punc_marks)):
+    count_each_mark(str(punc_marks[i]))
 
 ###other way to calculate the sum of the punctuations marks used in the texte file
 def sum_punc_marks(punc_mark_a, punc_mark_b, punc_mark_c, punc_mark_d, punc_mark_e, punc_mark_f, punc_park_g):
