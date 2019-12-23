@@ -27,10 +27,10 @@ print(text_to_print)
 def count_each_mark(punc_mark):
         print("The number of"+ " " +str(punc_mark) + " " +"mark in the file is" + " " +str(my_file.count(punc_mark))+".")
 
-punc_markss=("," "." "?" ";" "-" ":" "!")
+punc_marks=("," "." "?" ";" "-" ":" "!")
 #print each mark
-for i in range(0, len(punc_markss)):
-    count_each_mark(str(punc_markss[i]))
+for i in range(0, len(punc_marks)):
+    count_each_mark(str(punc_marks[i]))
 
 
 
