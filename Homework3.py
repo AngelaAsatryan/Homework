@@ -20,22 +20,3 @@ def sum_punc_marks(punc_mark):
         print("There are" + " " + str(total_punc_marks) + " " + "punctuation marks used in the text.")
 sum_punc_marks(str(punc_marks))
 
-##other way to calculate the sum of the punctuations marks used in the texte file
-#find if there any $ symbol in the text, if yes, replace and go to the next step
-find_symbol = my_file.find('$')
-input = ",.?;-:!"
-output = "$$$$$$$"
-transtable = my_file.maketrans(input, output)
-input1 = "$"
-output1 = "#"
-transtable1 = my_file.maketrans(input1, output1)
-replace_symbol = my_file.translate(transtable1)
-if find_symbol == -1:
-        my_file_no_punc=my_file.translate(transtable)
-else:
-        my_file_no_punc = replace_symbol.translate(transtable)
-
-#count the $ in the string and give a message about it
-punc_mark_count=(my_file_no_punc.count('$'))
-text_to_print= "There are"+ " " + str(punc_mark_count) + " " + "punctuation marks used in the text."
-print(text_to_print)
