@@ -13,7 +13,7 @@ class Dog:
   def bark(arg):
     print("haf haf haf")
   def run(arg):
-    print("The" + " " + arg.name + " " + "moving his" + " " + arg.legs +" "+ "legs"+ " "+"fast.")
+    print("The" + " " + arg.name + " " + "moving his/her" + " " + arg.legs +" "+ "legs"+ " "+"fast.")
 
 #instance
 dog1 = Dog("Rex", 3, "German shepherd", "male", "long and full", "big", "long and hairy", "long and strong", "dense and long")
