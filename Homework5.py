@@ -11,7 +11,7 @@ class Chemical_element:
         self.Densities = Densities
     #methods
     def transform(mol):
-        print("The" + " "+ mol.Chemical_name + " " +"has been transformed to"+" ")
+        print("The" + " "+ mol.Chemical_name + " " +"has been transformed to.")
     def form_mol(mol):
         print(mol.Chemical_symbol + " "+ "+" + " "+mol.Chemical_symbol+ " "+"="+ " "+str(mol.Chemical_symbol)+"2")
     def radiate(mol):
