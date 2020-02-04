@@ -1,10 +1,9 @@
 # Python code to demonstrate working of unittest
 import unittest
-import time
 # import _json
 from selenium import webdriver
 driver = webdriver.Chrome()
-#driver.implicitly_wait(10)
+driver.implicitly_wait(10)
 
 class web_page:
     def __init__(self, baseurl, search_area, submit_button):
@@ -20,7 +19,7 @@ class search_element:
         self.path_new = path_new
 
 #define my instance
-search_element = search_element("LEGO", '0, 964.8', '//*[@id="search"]/div[1]/div[2]//span[4]/div[1]/div[3]//span//div[2]/div[2]//div[1]//div[1]/h2/a/span', '//*[@id="productTitle"]')
+search_element = search_element("LEGO", 'window.scrollTo(0, 964.8)', '//*[@id="search"]/div[1]/div[2]//span[4]/div[1]/div[3]//span//div[2]/div[2]//div[1]//div[1]/h2/a/span', '//*[@id="productTitle"]')
 web_page = web_page('https://amazon.com', 'twotabsearchtextbox', '//*[@id="nav-search"]/form/div[2]/div/input')
 
 
@@ -36,13 +35,16 @@ class TestSearchFunctionality(unittest.TestCase):
         # search the text
         self.submit_button.click()
         #scroll the window to desired location
-        driver.execute_script('window.scrollTo(0, 964.8)')
+        driver.execute_script(search_element.location)
+        #open the searched item
         self.search_results = driver.find_elements_by_xpath(search_element.path)[0]
         self.search_results.click()
+        #locate the item
         self.new_window = driver.find_elements_by_xpath(search_element.path_new)[0]
     def tearDown(self) -> None:
         driver.quit()
     def test_run(self):
         self.assertEqual(str(self.search_results), str(self.new_window))
+
 if __name__ == '__main__':
     unittest.main()
